@@ -1,0 +1,34 @@
+body {
+    display: flex; /* Utilise Flexbox pour aligner les éléments */
+    flex-direction: column; /* Les éléments seront disposés en colonne */
+    align-items: center; /* Centre les éléments horizontalement */
+    justify-content: center; /* Centre les éléments verticalement */
+    height: 100vh; /* Hauteur de la page à 100% de la fenêtre */
+    margin: 0; /* Supprime les marges par défaut */
+    background-color: #f4f7f9; /* Couleur de fond */
+    font-family: Arial, sans-serif; /* Police de caractères */
+}
+
+#Cabo {
+    width: 400px; /* Largeur fixe de l'image */
+    height: auto; /* Hauteur ajustée pour conserver les proportions */
+    margin-bottom: 20px; /* Espace de marge en bas de l'image */
+    border-radius: 8px; /* Bord arrondi de l'image */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+#Bouton {
+    padding: 12px 24px; /* Espace interne du bouton */
+    font-size: 18px; /* Taille de la police */
+    font-weight: bold; /* Gras */
+    color: #ffffff; /* Couleur du texte */
+    background-color: #f38600; /* Couleur d'arrière-plan */
+    border: none; /* Supprime la bordure */
+    border-radius: 8px; /* Bord arrondi du bouton */
+    cursor: pointer; /* Curseur de souris en forme de pointeur */
+    transition: background-color 0.3s ease; /* Transition en douceur pour la couleur d'arrière-plan */
+}
+
+#Bouton:hover {
+    background-color: #ff7f00; /* Couleur d'arrière-plan au survol */
+}

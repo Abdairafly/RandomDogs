@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Dogs.css">
+    <title>Random Dog</title>
+</head>
+<body>
+    <img id="Cabo" src="i106625-signes-bonne-sante-chien.jpg" alt="chien">
+
+    <button id="Bouton">
+        Woof
+    </button>
+
+    <script>
+       // Lorsque le bouton est cliqué, la fonction refreshDog est appelée
+document.querySelector('#Bouton').addEventListener('click', async () => {
+    refreshDog();
+});
+
+// Cette fonction récupère une nouvelle image de chien aléatoire depuis l'API
+async function refreshDog() {
+    // Effectuer une requête GET vers l'API 'https://random.dog/woof.json'
+    var fetchResult = await fetch('https://random.dog/woof.json');
+    var data = await fetchResult.json(); // Convertir la réponse en format JSON
+
+    // Si l'URL de l'image contient l'extension '.mp4', cela signifie que c'est une vidéo
+    if (data.url.includes('.mp4')) {
+        // Si c'est une vidéo, appeler à nouveau la fonction pour obtenir une image
+        refreshDog();
+        return; // Sortir de la fonction pour éviter l'exécution du code suivant
+    }
+
+    // Mettre à jour la source de l'image avec l'URL de l'image aléatoire obtenue
+    document.querySelector('#Cabo').src = data.url;
+}
+
+// Appeler la fonction refreshDog pour afficher une image de chien aléatoire au chargement de la page
+refreshDog();
+
+    </script>
+</body>
+</html>
